@@ -1,0 +1,37 @@
+{
+  "name": "angularank",
+  "version": "1.0.0",
+  "description": "Angular repositories contribiutors ranking",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon server/server.js --ignore client\app",
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "dev": "webpack -d --watch",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://BartoszJurga@bitbucket.org/BartoszJurga/angularank.git"
+  },
+  "keywords": [
+    "angular",
+    "repositories",
+    "contributors",
+    "rank"
+  ],
+  "author": "Bartosz Jurga",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "express": "^4.14.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.17.0"
+  }
+}
