@@ -17,7 +17,8 @@
     "angular",
     "repositories",
     "contributors",
-    "rank"
+    "rank",
+    "github"
   ],
   "author": "Bartosz Jurga",
   "license": "ISC",
@@ -31,6 +32,7 @@
     "express": "^4.14.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-router": "^3.0.2",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.0"
