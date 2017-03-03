@@ -8,10 +8,21 @@ export default class App extends React.Component {
             usersData: [],
             userRepos: []
         };
-        this.fetchUsers();
+        this.getUsers();
+        this.getUserRepos();
     }
 
-    fetchUsers () {
+    getUserRepos (username) {
+        this.serverRequest =
+            axios
+                .get("http://localhost:3000/api/repos/" + username)
+                .then(function(result){
+                    console.log('Number user\'s repos: ', result.data.length);
+                    this.setState({usersRepos: result.data});
+                }.bind(this));
+    }
+
+    getUsers () {
         this.serverRequest =
             axios
                 .get("http://localhost:3000/api/users")
