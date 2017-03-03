@@ -12,9 +12,11 @@ export default class RankingList extends React.Component {
             return (
                 <div>
                     <h1>Members!</h1>
+                    <ol>
                     {members.map(function (member) {
                         return <RankingItem member={member} />
                     })}
+                    </ol>
                 </div>
             )
         } else {

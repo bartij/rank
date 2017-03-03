@@ -7,14 +7,14 @@ export default class RankingList extends React.Component {
 
     render () {
         return (
-            <div style={{margin: 'auto'}} key={this.props.member.id}>
+            <li style={{margin: 'auto'}} key={this.props.member.id}>
                 <a href='#'>
-                    <img style={{width: '50px', height: '50px'}} src={this.props.member.avatar_url}/>
+                    <img style={{width: '30px', height: '30px'}} src={this.props.member.avatar_url}/>
                     {'membername: ' + this.props.member.login} {'fullname: ' + this.props.member.name}
                     {'followers: ' + this.props.member.followers} {'repos amount: ' + this.props.member.public_repos}
                     {'gists: ' + this.props.member.public_gists}
                 </a>
-            </div>
+            </li>
         )
     }
 }
