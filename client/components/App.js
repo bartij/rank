@@ -9,7 +9,6 @@ export default class App extends React.Component {
             userRepos: []
         };
         this.fetchUsers();
-        // this.fetchUserRepo();
     }
 
     fetchUsers () {
@@ -17,18 +16,8 @@ export default class App extends React.Component {
             axios
                 .get("http://localhost:3000/api/users")
                 .then(function(result){
-                    console.log('result: ', result.data);
+                    console.log('Number of users from GitHub: ', result.length);
                     this.setState({usersData: result.data});
-                }.bind(this));
-    }
-
-    fetchUserRepo () {
-        this.serverRequest =
-            axios
-                .get("http://localhost:3000/api/user/vicb")
-                .then(function(result){
-                    console.log('result: ', result.data);
-                    this.setState({userRepos: result.data});
                 }.bind(this));
     }
 
@@ -38,8 +27,6 @@ export default class App extends React.Component {
 
     render () {
         const usersData = this.state.usersData;
-        console.log('usersData, ', JSON.stringify(usersData[0]));
-        console.log('usersRepos, ', JSON.stringify(this.state.userRepos));
         if (JSON.stringify(usersData) !== '[]') {
             return (
                 <div>

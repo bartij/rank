@@ -16,22 +16,11 @@ function fetchUsersData (members) {
     };
     return axios.all(usernames.map(userRequest))
         .then(function(data) {
-            console.log('Length fetch users: ', data.length);
+            console.log('GitHub returned ' + (data.length || 'no') + ' users.');
             return data.map(response => response.data);
         });
 }
 
-function fetchUserRepos (username) {
-    this.serverRequest =
-        axios
-            .get("https://api.github.com/users/" + username + "/repos?" + GITHUB_AUTH)
-            .then(function(result){
-                console.log("Length: " + result.data.length);
-                return result.data;
-            });
-}
-
 module.exports = {
-    fetchOrgMembers: fetchOrgMembers,
-    fetchUserRepos: fetchUserRepos
+    fetchOrgMembers: fetchOrgMembers
 };

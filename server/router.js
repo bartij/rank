@@ -6,5 +6,4 @@ module.exports = function(app) {
 
     app.use('/api', apiRoutes);
     apiRoutes.get('/users', controller.users);
-    apiRoutes.get('/user/:username', controller.userRepos);
 };
