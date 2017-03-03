@@ -8,13 +8,14 @@ export default class RankingList extends React.Component {
 
     render () {
         const members = this.props.membersData;
+        let i = 1;
         if (members.length > 0 && typeof(members) !== 'undefined') {
             return (
                 <div>
                     <h1>Members!</h1>
                     <ol>
                     {members.map(function (member) {
-                        return <RankingItem member={member} />
+                        return <RankingItem member={member} key={i++} />
                     })}
                     </ol>
                 </div>

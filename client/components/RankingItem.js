@@ -7,7 +7,7 @@ export default class RankingList extends React.Component {
 
     render () {
         return (
-            <li style={{margin: 'auto'}} key={this.props.member.id}>
+            <li style={{margin: 'auto'}}>
                 <a href='#'>
                     <img style={{width: '30px', height: '30px'}} src={this.props.member.avatar_url}/>
                     {'membername: ' + this.props.member.login} {'fullname: ' + this.props.member.name}
@@ -20,5 +20,6 @@ export default class RankingList extends React.Component {
 }
 
 RankingList.propTypes = {
-    member: React.PropTypes.object.isRequired
+    member: React.PropTypes.object.isRequired,
+    key: React.PropTypes.number.isRequired
 };
