@@ -5,45 +5,42 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            members: [],
-            usersData: []
-        }
+            usersData: [],
+            userRepos: []
+        };
+        this.fetchUsers();
+        // this.fetchUserRepo();
     }
 
-    fetchOrgMembers () {
+    fetchUsers () {
         this.serverRequest =
             axios
-                .get("https://api.github.com/orgs/angular/members?per_page=100")
+                .get("http://localhost:3000/api/users")
                 .then(function(result){
-                    console.log("Length: " + result.data.length);
-                    this.setState({members: result.data});
-                    this.fetchUsersData(result.data);
+                    console.log('result: ', result.data);
+                    this.setState({usersData: result.data});
                 }.bind(this));
     }
-    fetchUsersData (members) {
-        let usernames = members.map(member => member.login);
-        const userRequest = function getUserRequest(user) {
-            return axios
-                .get("https://api.github.com/users/" + user);
-        };
-        axios.all(usernames.map(userRequest))
-            .then(function(data) {
-                console.log('data: ', data);
-                this.setState({usersData: data});
-            }.bind(this));
-        this.setState({
-        });
+
+    fetchUserRepo () {
+        this.serverRequest =
+            axios
+                .get("http://localhost:3000/api/user/vicb")
+                .then(function(result){
+                    console.log('result: ', result.data);
+                    this.setState({userRepos: result.data});
+                }.bind(this));
     }
-    componentWillMount () {
-        this.fetchOrgMembers();
-    }
+
     componentWillUnmount () {
         this.serverRequest.abort();
     }
+
     render () {
-        const {usersData, members} = this.state;
+        const usersData = this.state.usersData;
+        console.log('usersData, ', JSON.stringify(usersData[0]));
+        console.log('usersRepos, ', JSON.stringify(this.state.userRepos));
         if (JSON.stringify(usersData) !== '[]') {
-            console.log('userData', usersData[0].data);
             return (
                 <div>
                     <h1>Members!</h1>
@@ -51,16 +48,16 @@ export default class App extends React.Component {
                         return (
                             <div style={{margin: 'auto'}} key={user.id}>
                                 <a href='#'>
-                                    <img style={{width: '50px', height: '50px'}} src={user.data.avatar_url}/>
-                                    {'username: ' + user.data.login} {'fullname: ' + user.data.name}
-                                    {'followers: ' + user.data.followers} {'repos amount: ' + user.data.public_repos}
-                                    {'gists: ' + user.data.public_gists}
+                                    <img style={{width: '50px', height: '50px'}} src={user.avatar_url}/>
+                                    {'username: ' + user.login} {'fullname: ' + user.name}
+                                    {'followers: ' + user.followers} {'repos amount: ' + user.public_repos}
+                                    {'gists: ' + user.public_gists}
                                 </a>
                             </div>
                         );
                     })}
                 </div>
-            )
+            );
         } else {
             return <div>No data</div>
         }

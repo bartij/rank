@@ -5,5 +5,6 @@ module.exports = function(app) {
     const apiRoutes = express.Router();
 
     app.use('/api', apiRoutes);
-    apiRoutes.get('/helloworld', controller.helloworld);
+    apiRoutes.get('/users', controller.users);
+    apiRoutes.get('/user/:username', controller.userRepos);
 };
