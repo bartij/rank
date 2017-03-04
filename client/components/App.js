@@ -42,7 +42,7 @@ export default class App extends React.Component {
         if (JSON.stringify(usersData) !== '[]') {
             return <RankingList membersData={usersData} />
         } else {
-            return <div>Something went wrong, there's no GitHub data.</div>
+            return <div>Waiting for data...</div>
         }
     }
 };

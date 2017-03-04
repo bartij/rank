@@ -20,6 +20,5 @@ export default class RankingList extends React.Component {
 }
 
 RankingList.propTypes = {
-    member: React.PropTypes.object.isRequired,
-    key: React.PropTypes.number.isRequired
+    member: React.PropTypes.object.isRequired
 };
