@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import RankingList from './RankingList';
+import Header from './Header';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -40,7 +41,12 @@ export default class App extends React.Component {
     render () {
         const usersData = this.state.usersData;
         if (JSON.stringify(usersData) !== '[]') {
-            return <RankingList membersData={usersData} />
+            return (
+                <div>
+                    <Header />,
+                    <RankingList membersData={usersData} />
+                </div>
+            )
         } else {
             return <h1>
                 <span className="let1">l</span>

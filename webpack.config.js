@@ -42,7 +42,8 @@ var config = {
                     fallback: "style-loader",
                     use: "css-loader"
                 }),
-            }
+            },
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
         ]
     }
 };
