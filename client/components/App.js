@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import RankingList from './RankingList';
-import style from './Styles/App.css';
 
 export default class App extends React.Component {
     constructor(props) {
