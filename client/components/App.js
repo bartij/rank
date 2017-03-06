@@ -51,7 +51,6 @@ export default class App extends React.Component {
                 <span className="let6">n</span>
                 <span className="let7">g</span>
             </h1>
-
         }
     }
 };
