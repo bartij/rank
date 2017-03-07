@@ -14,7 +14,6 @@ export default class Header extends React.Component {
                         <p className="logoText">AngulaRank</p>
                     </div>
                     <div className="col-md-4">
-                        Filtering will be there
                     </div>
                     <div className="col-md-4">
                     </div>
