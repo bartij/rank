@@ -5,6 +5,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var BUILD_DIR = path.resolve(__dirname, 'client/public');
 var APP_DIR = path.resolve(__dirname, 'client');
 
+global.jQuery = require('jquery');
+
 var config = {
     devtool: 'inline-source-map',
     entry: [
@@ -23,6 +25,10 @@ var config = {
         new ExtractTextPlugin({
             filename: BUILD_DIR + '/app.css',
             allChunks: true
+        }),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
         })
     ],
     module : {

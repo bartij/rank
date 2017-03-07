@@ -43,7 +43,7 @@ export default class App extends React.Component {
         if (JSON.stringify(usersData) !== '[]') {
             return (
                 <div>
-                    <Header />,
+                    <Header />
                     <RankingList membersData={usersData} />
                 </div>
             )

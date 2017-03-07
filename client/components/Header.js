@@ -8,8 +8,17 @@ export default class Header extends React.Component {
     render () {
         return (
             <div className="header">
-                <img src={require("../images/rank-logo.png")} alt="AngulaRank logo" />
-                <h1>AngulaRank</h1>
+                <div className="row">
+                    <div className="col-md-4">
+                        <img src={require("../images/rank-logo.png")} alt="AngulaRank logo" />
+                        <p className="logoText">AngulaRank</p>
+                    </div>
+                    <div className="col-md-4">
+                        Filtering will be there
+                    </div>
+                    <div className="col-md-4">
+                    </div>
+                </div>
             </div>
         )
     }
