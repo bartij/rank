@@ -11,7 +11,6 @@ export default class App extends React.Component {
             userRepos: []
         };
         this.getUsers();
-        this.getUserRepos();
     }
 
     getUserRepos (username) {
@@ -34,6 +33,23 @@ export default class App extends React.Component {
                 }.bind(this));
     }
 
+    sortMembers (members) {
+        const sort_key = "points";
+        members.map(member => member[sort_key] =
+            member.public_repos + member.public_gists + member.followers);
+        return this.sortMethod(members, sort_key)
+    }
+
+    sortMethod (arrayOfObjects, key) {
+        return arrayOfObjects.sort(function (a, b) {
+            if (a[key] < b[key]) {
+                return 1
+            } else {
+                return -1
+            }
+        })
+    }
+
     componentWillUnmount () {
         this.serverRequest.abort();
     }
@@ -41,10 +57,11 @@ export default class App extends React.Component {
     render () {
         const usersData = this.state.usersData;
         if (JSON.stringify(usersData) !== '[]') {
+            const sortedMembers = this.sortMembers(usersData);
             return (
                 <div>
                     <Header />
-                    <RankingList membersData={usersData} />
+                    <RankingList membersData={sortedMembers} />
                 </div>
             )
         } else {

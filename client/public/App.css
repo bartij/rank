@@ -172,7 +172,8 @@ a:hover {
 p.logoText {
     font-family: sans-serif;
     font-weight: 100;
-    font: 32px rgba(191, 13, 13, 0.77);
+    font-size: 24px;
+    font-color: rgba(191, 13, 13, 0.77);
     display: inline;
     float: left;
     color: #a0120f;
