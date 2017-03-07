@@ -35,7 +35,7 @@ export default class App extends React.Component {
     sortMembers (members) {
         const sort_key = "points";
         members.map(member => member[sort_key] =
-            parseInt(member.public_repos) + parseInt(member.gists) + parseInt(member.followers));
+            member.public_repos + member.public_gists + member.followers);
         return this.sortMethod(members, sort_key)
     }
 
@@ -56,7 +56,8 @@ export default class App extends React.Component {
     render () {
         const usersData = this.state.usersData;
         if (JSON.stringify(usersData) !== '[]') {
-            return <RankingList membersData={usersData} />
+            const sortedMembers = this.sortMembers(usersData);
+            return <RankingList membersData={sortedMembers} />
         } else {
             return <h1>
                 <span className="let1">l</span>
