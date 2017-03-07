@@ -11,11 +11,11 @@ export default class RankingList extends React.Component {
         let i = 1;
         if (members.length > 0 && typeof(members) !== 'undefined') {
             return (
-                <div>
-                    <h1>Members!</h1>
-                    <ol>
+                <div className="ranking">
+                    <h1 className="title" align="center">Angular contributors ranking</h1>
+                    <ol className="list">
                     {members.map(function (member) {
-                        return <RankingItem member={member} key={i++} />
+                        return <RankingItem member={member} key={i} number={i++}/>
                     })}
                     </ol>
                 </div>
