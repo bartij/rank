@@ -49,7 +49,11 @@ var config = {
                     use: "css-loader"
                 }),
             },
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
+            {
+                test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+                loader: 'file-loader?name=[name].[ext]'
+            }
         ]
     }
 };

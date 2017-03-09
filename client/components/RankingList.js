@@ -12,7 +12,7 @@ export default class RankingList extends React.Component {
         if (members.length > 0 && typeof(members) !== 'undefined') {
             return (
                 <div className="ranking">
-                    <h1 className="title">Angular contributors ranking</h1>
+                    <h2 className="title">Angular repository contributors ranking</h2>
                     <ol className="list">
                     {members.map(function (member) {
                         return <RankingItem member={member} key={i} number={i++}/>

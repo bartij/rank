@@ -187,7 +187,8 @@ p.logoText {
     margin: 0 5%;
 }
 
-.col-md-4 {
-    width: 33.333%;
-    display: inline-block;
+h2.title {
+    font-size: 24px;
+    color: rgba(191, 13, 13, 0.77);
+    margin: 10px 0;
 }

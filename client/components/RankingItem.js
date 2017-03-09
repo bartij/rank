@@ -11,8 +11,11 @@ export default class RankingList extends React.Component {
                 <a href='#'>
                     <img src={this.props.member.avatar_url}/>
                     <h3>{this.props.member.name} {`(${this.props.member.login})`} </h3>
-                    <p>{'followers: ' + this.props.member.followers}    {'repos amount: ' + this.props.member.public_repos}
-                            {'gists: ' + this.props.member.public_gists}</p>
+                    <p>
+                        {'followers: ' + this.props.member.followers}
+                        {'\trepos amount: ' + this.props.member.public_repos}
+                        {'\tgists: ' + this.props.member.public_gists}
+                        </p>
                 </a>
             </li>
         )
