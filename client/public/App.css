@@ -141,7 +141,7 @@ a {
     color: #4d4d4d;
 }
 
-a:hover {
+a:hover, a:active, a:visited {
     text-decoration: none;
 }
 

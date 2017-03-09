@@ -15,7 +15,7 @@ export default class RankingList extends React.Component {
                         {'followers: ' + this.props.member.followers}
                         {'\trepos amount: ' + this.props.member.public_repos}
                         {'\tgists: ' + this.props.member.public_gists}
-                        </p>
+                    </p>
                 </a>
             </li>
         )
