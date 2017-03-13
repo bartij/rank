@@ -13,8 +13,8 @@ export default class RankingList extends React.Component {
                     <h3>{this.props.member.name} {`(${this.props.member.login})`} </h3>
                     <p>
                         {'followers: ' + this.props.member.followers}
-                        {'\trepos amount: ' + this.props.member.public_repos}
-                        {'\tgists: ' + this.props.member.public_gists}
+                        {'\t|\trepos amount: ' + this.props.member.public_repos}
+                        {'\t|\tgists: ' + this.props.member.public_gists}
                     </p>
                 </a>
             </li>
