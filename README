@@ -1,0 +1,3 @@
+AngulaRank is an app that fetches Angular repository contributors data from GitHub and creates a rank
+based on their activities.
+'npm run serve' to start the server
